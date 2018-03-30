@@ -9,14 +9,6 @@ describe 'User' do
 
       expect(page).to have_content(book.title)
     end
-
-    it 'sees a list of reviews for that book' do
-      book = Book.create!(title: "Book Title")
-      user = User.create!(name: "Andrew")
-
-
-      visit book_path(book)
-
   end
 end
 
