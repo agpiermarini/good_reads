@@ -2,10 +2,16 @@
 <% if @reviews.empty? %>
   <%= "There are no reviews for this book yet" %>
 <% else %>
+
+  <div class="highest_rating">
+    <%= "Highest Rating: #{@book.highest_rating.rating}" %>
+    <%= "Review: #{@book.highest_rating.body}" %>
+    <%= "Reviewer: #{@book.highest_rating.user.name}" %>
+  <div>
   <%= "Average Rating: #{@book.average_rating} " %>
   <% @reviews.each do |review| %>
     <%= review.user.name %>
     <%= review.body %>
     <%= review.rating %>
   <% end %>
-<% end %>  
+<% end %>
