@@ -1,1 +1,6 @@
 <h1> <%= @book.title %> </h1>
+<% @reviews.each do |review| %>
+  <%= review.user.name %>
+  <%= review.body %>
+  <%= review.rating %>
+<% end %>
