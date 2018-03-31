@@ -8,6 +8,11 @@
     <%= "Review: #{@book.highest_rating.body}" %>
     <%= "Reviewer: #{@book.highest_rating.user.name}" %>
   <div>
+  <div class="lowest_rating">
+    <%= "Lowest Rating: #{@book.lowest_rating.rating}" %>
+    <%= "Review: #{@book.lowest_rating.body}" %>
+    <%= "Reviewer: #{@book.lowest_rating.user.name}" %>
+  <div>
   <%= "Average Rating: #{@book.average_rating} " %>
   <% @reviews.each do |review| %>
     <%= review.user.name %>
