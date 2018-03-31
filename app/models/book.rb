@@ -6,10 +6,10 @@ class Book < ApplicationRecord
   end
 
   def highest_rating
-    reviews.maximum(:rating)
+    reviews.order(:rating).last
   end
 
   def lowest_rating
-    reviews.minimum(:rating)
+    reviews.order(:rating).first
   end
 end

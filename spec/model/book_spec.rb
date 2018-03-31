@@ -32,7 +32,7 @@ describe Book do
         review_2 = user_2.reviews.create!(body: "Really bad book", rating: 1, book_id: book.id)
         review_3 = user_3.reviews.create!(body: "Really wonderful book", rating: 4, book_id: book.id)
 
-        expect(book.highest_rating).to eq(review_1.rating)
+        expect(book.highest_rating).to eq(review_1)
       end
     end
 
@@ -46,7 +46,7 @@ describe Book do
         review_2 = user_2.reviews.create!(body: "Really bad book", rating: 1, book_id: book.id)
         review_3 = user_3.reviews.create!(body: "Really wonderful book", rating: 4, book_id: book.id)
 
-        expect(book.lowest_rating).to eq(review_2.rating)
+        expect(book.lowest_rating).to eq(review_2)
       end
     end
   end
