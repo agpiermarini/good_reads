@@ -1,6 +1,11 @@
 <h1> <%= @book.title %> </h1>
-<% @reviews.each do |review| %>
-  <%= review.user.name %>
-  <%= review.body %>
-  <%= review.rating %>
-<% end %>
+<% if @reviews.empty? %>
+  <%= "There are no reviews for this book yet" %>
+<% else %>
+  <%= "Average Rating: #{@book.average_rating} " %>
+  <% @reviews.each do |review| %>
+    <%= review.user.name %>
+    <%= review.body %>
+    <%= review.rating %>
+  <% end %>
+<% end %>  
